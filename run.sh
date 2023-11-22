@@ -30,5 +30,9 @@ cd llm-foundry
 
 pip install -e ".[gpu]"
 
+### Login Hugging Face with tokens
+
+huggingface-cli login --token "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"
+
 # Run train.py with config.yaml
 composer train.py /home/user/zaloai/config.yaml

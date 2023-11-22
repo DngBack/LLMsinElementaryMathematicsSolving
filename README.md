@@ -44,6 +44,10 @@ cd llm-foundry
 pip install -e ".[gpu]"
 ```
 
+### Login Hugging Face with tokens
+
+huggingface-cli login --token "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"
+
 ### Finetune
 
 ```
