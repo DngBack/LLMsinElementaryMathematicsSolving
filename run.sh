@@ -1,13 +1,13 @@
 # Set up Conda env
-curl --output anaconda.sh https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
+# curl --output anaconda.sh https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
 
-bash anaconda.sh
+# bash anaconda.sh
 
-source ~/.bashrc
+# source ~/.bashrc
 
-conda create -n zalo python=3.10
+# conda create -n zalo python=3.10
 
-conda activate zalo
+# conda activate zalo
 
 # Set up cuda and cuda toolkit
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
@@ -24,7 +24,7 @@ sudo apt-get install zlib1g-dev
 pip install torch cmake packaging
 
 # Env
-cd zaloai
+cd LLMsinElementaryMathematicsSolving
 
 cd llm-foundry
 
@@ -35,4 +35,9 @@ pip install -e ".[gpu]"
 huggingface-cli login --token "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"
 
 # Run train.py with config.yaml
-composer train.py /home/user/zaloai/config.yaml
+
+cd scripts
+
+cd train 
+
+composer train.py /home/user/LLMsinElementaryMathematicsSolving/config.yaml 2> train.log

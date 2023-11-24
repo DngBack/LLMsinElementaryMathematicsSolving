@@ -33,7 +33,7 @@ train_loader:
       # Note: absolute paths for data_dir are more reliable;
       # relative paths will be interpreted relative to whatever your
       # working directory is when you run `train.py`
-      data_dir: /home/user/zaloai/data/train
+      data_dir: /home/user/LLMsinElementaryMathematicsSolving/data/train
     # Note: `scripts/train` will be the working directory when resolving
     # the preprocessing_fn import path
     preprocessing_fn: dataloader:multiple_choice
@@ -60,11 +60,11 @@ scheduler:
 
 optimizer:
   name: decoupled_lionw
-  lr: 6.0e-4
+  lr: 5e-5
   betas:
   - 0.9
   - 0.95
-  eps: 1.0e-08
+  # eps: 1.0e-08
   weight_decay: 0.0
 
 algorithms:
@@ -72,7 +72,7 @@ algorithms:
     clipping_type: norm
     clipping_threshold: 1.0
 
-max_duration: 1ep
+max_duration: 2ep
 eval_interval: 1
 eval_first: false
 eval_subset_num_batches: -1
@@ -113,7 +113,8 @@ callbacks:
 # Checkpoint to local filesystem or remote object store
 # save_interval: 500ba
 # save_num_checkpoints_to_keep: 1  # Important, this cleans up checkpoints saved to DISK
-# save_folder: ./{run_name}/checkpoints
+save_folder: /home/user/LLMsinElementaryMathematicsSolving/checkpoints
+overwrite: True
 # save_folder: s3://my-bucket/my-folder/{run_name}/checkpoints
 
 # Load from local filesystem or remote object store
